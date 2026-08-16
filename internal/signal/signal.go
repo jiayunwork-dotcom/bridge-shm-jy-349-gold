@@ -121,8 +121,8 @@ func Peak(s Series) float64 {
 	}
 	m := 0.0
 	for _, v := range s.Data {
-		if v > m {
-			m = v
+		if a := math.Abs(v); a > m {
+			m = a
 		}
 	}
 	return m
